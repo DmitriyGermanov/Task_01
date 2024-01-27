@@ -6,8 +6,8 @@ public class Doll extends Toy{
         return super.getName();
     }
 
-    public Doll(int id,  double frequency) {
-        super(id, "doll", frequency);
+    public Doll(int id,  Double weight) {
+        super(id, "doll", weight);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Doll extends Toy{
     }
 
     @Override
-    public double getWeight() {
+    public Double getWeight() {
         return super.getWeight();
     }
 
@@ -26,7 +26,7 @@ public class Doll extends Toy{
     }
 
     @Override
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         super.setWeight(weight);
     }
 

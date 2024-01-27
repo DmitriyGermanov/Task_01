@@ -6,8 +6,8 @@ public class Constructor extends Toy {
         return super.getName();
     }
 
-    public Constructor(int id, double frequency) {
-        super(id, "constructor", frequency);
+    public Constructor(int id, Double weight) {
+        super(id, "constructor", weight);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Constructor extends Toy {
     }
 
     @Override
-    public double getWeight() {
+    public Double getWeight() {
         return super.getWeight();
     }
 
@@ -26,7 +26,7 @@ public class Constructor extends Toy {
     }
 
     @Override
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         super.setWeight(weight);
     }
 

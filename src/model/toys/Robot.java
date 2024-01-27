@@ -1,8 +1,8 @@
 package model.toys;
 
 public class Robot extends Toy {
-    public Robot(int id, double frequency) {
-        super(id, "robot", frequency);
+    public Robot(int id, Double weight) {
+        super(id, "robot", weight);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Robot extends Toy {
     }
 
     @Override
-    public double getWeight() {
+    public Double getWeight() {
         return super.getWeight();
     }
 
@@ -27,7 +27,7 @@ public class Robot extends Toy {
     }
 
     @Override
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         super.setWeight(weight);
     }
 

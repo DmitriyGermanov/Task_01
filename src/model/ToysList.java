@@ -61,11 +61,11 @@ public class ToysList {
     public Toy getToyByIndex(int index) {
         return this.toysList.get(index);
     }
-    public void changeFrequency(int id, float frequency) {
+    public void changeFrequency(int id, Double weight) {
         boolean changed = false;
         for (Toy toy : this.toysList) {
             if (toy.getId() == id) {
-                toy.setWeight(frequency);
+                toy.setWeight(weight);
                 changed = true;
             }
         }

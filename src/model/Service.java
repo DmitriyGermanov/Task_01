@@ -42,8 +42,8 @@ public class Service {
 
     public void writeDrawToFile(String fileName) throws IOException {
         StringBuilder sb = new StringBuilder();
-        for (Toy toy : prizeDraw.getToysQueue()) {
-            sb.append(toy.toString()).append(";");
+        while(prizeDraw.getPrizeQueueSize() > 0) {
+            sb.append(prizeDraw.getPrize()).append(";");
             sb.append("\n");
         }
         fileHandler.writeObject(sb.toString(), "Output.json");

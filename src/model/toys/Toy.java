@@ -1,7 +1,7 @@
 package model.toys;
 
 public abstract class Toy implements Comparable<Toy> {
-    private int id;
+    private Integer id;
     private Double weight;
     private final String name;
 
@@ -20,7 +20,7 @@ public abstract class Toy implements Comparable<Toy> {
         return id;
     }
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
@@ -28,21 +28,21 @@ public abstract class Toy implements Comparable<Toy> {
         this.id = id;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 
 
     @Override
     public int compareTo(Toy o) {
-        return this.weight.compareTo(o.getWeight());
+        return this.id.compareTo(o.id);
     }
 
     @Override
     public String toString() {
         return "Toy{" +
                 "id=" + id +
-                ", frequency=" + weight +
+                ", weight=" + weight +
                 ", name='" + name + '\'' +
                 '}';
     }

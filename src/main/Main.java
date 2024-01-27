@@ -11,7 +11,7 @@ public class Main {
         try {
             service.createToy(1, "robot", 2.0);
             service.createToy(2, "doll", 2.0);
-            service.createToy(3, "constructor", 5.0);
+            service.createToy(3, "constructor", 6.0);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }

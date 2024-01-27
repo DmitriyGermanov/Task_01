@@ -35,12 +35,14 @@ public class PrizeDraw {
     }
 
     public Toy getPrize() {
-        Toy exitToy =  toysQueue.poll();
-        toysQueue.remove(exitToy);
-        return exitToy;
+        return toysQueue.remove();
     }
 
     public PriorityQueue<Toy> getToysQueue() {
         return toysQueue;
+    }
+
+    public int getPrizeQueueSize() {
+        return toysQueue.size();
     }
 }
