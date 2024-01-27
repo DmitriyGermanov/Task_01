@@ -17,8 +17,8 @@ public class Robot extends Toy {
     }
 
     @Override
-    public double getFrequency() {
-        return super.getFrequency();
+    public double getWeight() {
+        return super.getWeight();
     }
 
     @Override
@@ -27,8 +27,8 @@ public class Robot extends Toy {
     }
 
     @Override
-    public void setFrequency(double frequency) {
-        super.setFrequency(frequency);
+    public void setWeight(double weight) {
+        super.setWeight(weight);
     }
 
     @Override

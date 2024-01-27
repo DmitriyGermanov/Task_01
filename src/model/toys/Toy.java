@@ -2,7 +2,7 @@ package model.toys;
 
 public abstract class Toy implements Comparable<Toy> {
     private int id;
-    private Double frequency;
+    private Double weight;
     private final String name;
 
     public String getName() {
@@ -10,9 +10,9 @@ public abstract class Toy implements Comparable<Toy> {
     }
 
 
-    public Toy(int id, String name, double frequency) {
+    public Toy(int id, String name, double weight) {
         this.id = id;
-        this.frequency = frequency;
+        this.weight = weight;
         this.name = name;
     }
 
@@ -20,29 +20,29 @@ public abstract class Toy implements Comparable<Toy> {
         return id;
     }
 
-    public double getFrequency() {
-        return frequency;
+    public double getWeight() {
+        return weight;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setFrequency(double frequency) {
-        this.frequency = frequency;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
 
     @Override
     public int compareTo(Toy o) {
-        return frequency.compareTo(o.getFrequency());
+        return this.weight.compareTo(o.getWeight());
     }
 
     @Override
     public String toString() {
         return "Toy{" +
                 "id=" + id +
-                ", frequency=" + frequency +
+                ", frequency=" + weight +
                 ", name='" + name + '\'' +
                 '}';
     }

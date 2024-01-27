@@ -6,33 +6,66 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ToysList {
-    List<Toy> toyList;
+    List<Toy> toysList;
 
     public ToysList() {
-        this.toyList = new ArrayList<>();
+        this.toysList = new ArrayList<>();
     }
 
     public void addToy(Toy toy) {
-        this.toyList.add(toy);
+        this.toysList.add(toy);
     }
 
     public void remove(Toy toy) {
-        this.toyList.remove(toy);
+        this.toysList.remove(toy);
     }
 
-    public List<Toy> getToyList() {
-        return this.toyList;
+    public void removeToyById(int id) {
+        this.toysList.removeIf(t -> t.getId() == id);
     }
 
-    public void setToyList(List<Toy> toyList) {
-        this.toyList = toyList;
+    public List<Toy> getToysList() {
+        return this.toysList;
     }
 
+    public void setToysList(List<Toy> toysList) {
+        this.toysList = toysList;
+    }
+
+    public int getToyListLength() {
+        return this.toysList.size();
+    }
+
+    public Toy getToyById(int id) {
+        for (Toy toy : this.toysList) {
+            if (toy.getId() == id) {
+                return toy;
+            }
+        }
+        throw new IllegalArgumentException("Игрушка с таким ID не найдена");
+    }
+
+    public double getToyWeightById(int id) {
+        for (Toy toy : this.toysList) {
+            if (toy.getId() == id) {
+                return toy.getWeight();
+            }
+        }
+        throw new IllegalArgumentException("Игрушка с таким ID не найдена");
+    }
+
+    public double getToyWeightByIndex(int index) {
+        return this.toysList.get(index).getWeight();
+    }
+
+    public Toy getToyByIndex(int index) {
+        return this.toysList.get(index);
+    }
     public void changeFrequency(int id, float frequency) {
         boolean changed = false;
-        for (Toy toy : this.toyList) {
+        for (Toy toy : this.toysList) {
             if (toy.getId() == id) {
-                toy.setFrequency(frequency);
+                toy.setWeight(frequency);
                 changed = true;
             }
         }
@@ -44,7 +77,7 @@ public class ToysList {
     @Override
     public String toString() {
         return "ToyList{" +
-                "toyList=" + toyList +
+                "toyList=" + toysList +
                 '}';
     }
 }

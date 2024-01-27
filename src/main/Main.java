@@ -1,11 +1,27 @@
 package main;
 
 
-import cout.ConsoleOUT;
+import model.Service;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleOUT consoleOut = new ConsoleOUT();
-
+        Service service = new Service();
+        try {
+            service.createToy(1, "robot", 2.0);
+            service.createToy(2, "doll", 2.0);
+            service.createToy(3, "constructor", 5.0);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < 10; i++) {
+            service.drawPrize();
+        }
+        try {
+            service.writeDrawToFile("Output.json");
+        } catch (RuntimeException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }
