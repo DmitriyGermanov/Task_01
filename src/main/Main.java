@@ -1,11 +1,11 @@
 package main;
 
-import console.out.ConsoleOUT;
+
+import cout.ConsoleOUT;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleOUT console = new ConsoleOUT();
-        console.print("Hello World!");
+        ConsoleOUT consoleOut = new ConsoleOUT();
 
     }
 }
