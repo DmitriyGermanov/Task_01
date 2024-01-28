@@ -2,7 +2,6 @@ package model;
 
 import model.file_handler.FileHandler;
 import model.file_handler.Writable;
-import model.toys.Toy;
 
 import java.io.IOException;
 
@@ -40,12 +39,23 @@ public class Service {
         prizeDraw.drawPrize();
     }
 
-    public void writeDrawToFile(String fileName) throws IOException {
+    public void writeAllDrawToFile(String fileName) throws IOException {
         StringBuilder sb = new StringBuilder();
         while(prizeDraw.getPrizeQueueSize() > 0) {
             sb.append(prizeDraw.getPrize()).append(";");
             sb.append("\n");
         }
         fileHandler.writeObject(sb.toString(), "Output.json");
+    }
+
+    public void writeDrawToFile(String fileName) throws IOException {
+        StringBuilder sb = new StringBuilder();
+            sb.append(prizeDraw.getPrize()).append(";");
+            sb.append("\n");
+        fileHandler.writeObject(sb.toString(), "Output.json");
+    }
+
+    public void writeToFile(String message) throws IOException {
+        fileHandler.writeObject(message, "Output.txt");
     }
 }

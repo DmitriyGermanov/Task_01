@@ -19,7 +19,7 @@ public class Main {
             service.drawPrize();
         }
         try {
-            service.writeDrawToFile("Output.json");
+            service.writeAllDrawToFile("Output.json");
         } catch (RuntimeException | IOException e) {
             e.printStackTrace();
         }
