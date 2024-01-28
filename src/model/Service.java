@@ -10,7 +10,7 @@ public class Service {
     private final ToysFabric toysFabric;
     private double totalWeight;
     private final PrizeDraw prizeDraw;
-    private Writable fileHandler;
+    private final Writable fileHandler;
 
 
     public Service() {
@@ -49,10 +49,9 @@ public class Service {
     }
 
     public void writeDrawToFile(String fileName) throws IOException {
-        StringBuilder sb = new StringBuilder();
-            sb.append(prizeDraw.getPrize()).append(";");
-            sb.append("\n");
-        fileHandler.writeObject(sb.toString(), "Output.json");
+        String sb = prizeDraw.getPrize() + ";" +
+                "\n";
+        fileHandler.writeObject(sb, "Output.json");
     }
 
     public void writeToFile(String message) throws IOException {
